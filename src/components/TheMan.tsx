@@ -12,6 +12,7 @@ export default function TheMan() {
   return (
     <section
       ref={ref}
+      id="the-man"
       className="relative min-h-screen flex items-center overflow-hidden bg-obsidian"
     >
       {/* Full-bleed background — high-res image */}

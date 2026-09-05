@@ -87,7 +87,7 @@ export default function HeroSection() {
           className="mt-12"
         >
           <a
-            href="#legacy"
+            href="#the-man"
             className="group relative inline-block font-serif text-sm tracking-[0.3em] uppercase text-gold border border-gold/40 px-8 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
           >
             Explore His Legacy
