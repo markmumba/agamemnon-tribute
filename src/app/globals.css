@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-obsidian: #0a0a0a;
+  --color-marble: #f5f0e8;
+  --color-gold: #c9a84c;
+  --color-gold-dark: #8b6914;
+  --color-bronze: #cd7f32;
+  --color-blood: #8b0000;
+  --color-parchment: #d4c5a0;
+  --color-ivory: #fffff0;
+  --font-serif: var(--font-cinzel);
+  --font-body: var(--font-cormorant);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-obsidian);
+  color: var(--color-marble);
+  font-family: var(--font-body), Georgia, serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Greek key border pattern */
+.greek-border {
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--color-gold) 0px,
+    var(--color-gold) 10px,
+    transparent 10px,
+    transparent 15px,
+    var(--color-gold) 15px,
+    var(--color-gold) 25px
+  ) 10;
+  border-width: 3px;
+  border-style: solid;
+}
+
+/* Shimmer on gold text */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-dark) 0%,
+    var(--color-gold) 25%,
+    #ffd700 50%,
+    var(--color-gold) 75%,
+    var(--color-gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Parallax stacking shadow — cast onto section being covered */
+.stack-shadow {
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Film grain overlay — masks low-res artifacts, adds ancient texture */
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
+/* Video overlay gradient */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.5) 40%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
 }
