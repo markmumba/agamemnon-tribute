@@ -85,3 +85,32 @@ body {
     rgba(10, 10, 10, 0.85) 100%
   );
 }
+
+/* Fluid typography */
+.text-fluid-hero {
+  font-size: clamp(2.5rem, 5vw + 1rem, 8rem);
+}
+.text-fluid-section {
+  font-size: clamp(2rem, 3vw + 0.5rem, 3.75rem);
+}
+.text-fluid-chapter {
+  font-size: clamp(2.5rem, 4vw + 0.5rem, 4.5rem);
+}
+
+/* Focus rings */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

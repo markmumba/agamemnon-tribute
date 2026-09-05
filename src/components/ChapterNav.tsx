@@ -7,7 +7,7 @@ export default function ChapterNav({ current }: { current: string }) {
   const next = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
 
   return (
-    <nav className="max-w-3xl mx-auto px-8 sm:px-16 py-16">
+    <nav aria-label="Previous and next chapters" className="max-w-3xl mx-auto px-8 sm:px-16 py-16">
       <div className="h-[1px] w-full bg-gold/10 mb-12" />
 
       <div className="flex justify-between items-start">

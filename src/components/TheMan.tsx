@@ -31,14 +31,14 @@ export default function TheMan() {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ type: "spring", stiffness: 60, damping: 20 }}
           className="h-[1px] w-24 bg-gold origin-left mb-8"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
           className="font-serif text-xs tracking-[0.5em] uppercase text-gold/60 mb-4"
         >
           The Man
@@ -47,8 +47,8 @@ export default function TheMan() {
         <motion.h2
           initial={{ opacity: 0, x: -40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-4xl sm:text-5xl lg:text-6xl text-marble tracking-wide mb-8"
+          transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.15 }}
+          className="font-serif text-fluid-section text-marble tracking-wide mb-8"
         >
           Son of Atreus
         </motion.h2>
@@ -56,7 +56,7 @@ export default function TheMan() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
           className="space-y-6 text-parchment/70 text-xl leading-relaxed max-w-lg"
         >
           <p>
@@ -71,7 +71,7 @@ export default function TheMan() {
           </p>
         </motion.div>
 
-        <ReadMoreLink href="/the-man" delay={1} />
+        <ReadMoreLink href="/the-man" delay={0.3} />
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export default function ReadMoreLink({
       ref={ref}
       initial={{ opacity: 0, y: 15 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, delay }}
       className="mt-10"
     >
       <Link

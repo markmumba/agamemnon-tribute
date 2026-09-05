@@ -33,7 +33,12 @@ export default function ScrollReveal({
       ref={ref}
       initial={initial}
       animate={animate}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+      transition={{
+        type: "spring",
+        stiffness: direction === "up" ? 100 : 80,
+        damping: direction === "up" ? 20 : 18,
+        delay,
+      }}
       className={className}
     >
       {children}

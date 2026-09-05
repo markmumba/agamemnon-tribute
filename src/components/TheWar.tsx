@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReadMoreLink from "./ReadMoreLink";
 
 const stats = [
@@ -14,6 +14,7 @@ export default function TheWar() {
   const ref = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     videoRef.current?.play().catch(() => {});
@@ -21,6 +22,12 @@ export default function TheWar() {
 
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-obsidian">
+      {!videoLoaded && (
+        <div className="absolute inset-0 z-[5] flex items-center justify-center">
+          <div className="h-8 w-8 rounded-full border-2 border-gold/30 border-t-gold animate-spin" />
+        </div>
+      )}
+
       <video
         ref={videoRef}
         autoPlay
@@ -28,7 +35,9 @@ export default function TheWar() {
         loop
         playsInline
         suppressHydrationWarning
-        className="absolute inset-0 h-full w-full object-cover scale-[1.35]"
+        onCanPlay={() => setVideoLoaded(true)}
+        className="absolute inset-0 h-full w-full object-cover scale-[1.35] transition-opacity duration-700"
+        style={{ opacity: videoLoaded ? 1 : 0 }}
       >
         <source src="/ships-at-sea.mp4" type="video/mp4" />
       </video>
@@ -38,7 +47,7 @@ export default function TheWar() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
           className="font-serif text-xs tracking-[0.5em] uppercase text-gold/60 mb-4"
         >
           The War
@@ -47,8 +56,8 @@ export default function TheWar() {
         <motion.h2
           initial={{ opacity: 0, x: -60 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.9, delay: 0.4 }}
-          className="font-serif text-5xl sm:text-6xl lg:text-7xl text-marble tracking-wide mb-6"
+          transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.15 }}
+          className="font-serif text-fluid-section text-marble tracking-wide mb-6"
         >
           A Thousand Ships
         </motion.h2>
@@ -56,7 +65,7 @@ export default function TheWar() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
           className="max-w-2xl space-y-5 text-parchment/80 text-xl leading-relaxed"
         >
           <p>
@@ -69,7 +78,7 @@ export default function TheWar() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
           className="mt-12 flex gap-12 sm:gap-20"
         >
           {stats.map((stat) => (
@@ -84,7 +93,7 @@ export default function TheWar() {
           ))}
         </motion.div>
 
-        <ReadMoreLink href="/the-war" delay={1.3} />
+        <ReadMoreLink href="/the-war" delay={0.3} />
       </div>
     </section>
   );

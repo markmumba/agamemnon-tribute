@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond } from "next/font/google";
+import Providers from "@/components/Providers";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -38,7 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${cinzel.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+          <Providers>{children}</Providers>
+        </body>
     </html>
   );
 }

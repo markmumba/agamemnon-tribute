@@ -19,7 +19,7 @@ export default function TheSacrifice() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
           className="font-serif text-xs tracking-[0.5em] uppercase text-blood mb-6"
         >
           The Sacrifice
@@ -28,8 +28,8 @@ export default function TheSacrifice() {
         <motion.h2
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-4xl sm:text-5xl lg:text-6xl text-marble/90 tracking-wide mb-4"
+          transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.15 }}
+          className="font-serif text-fluid-section text-marble/90 tracking-wide mb-4"
         >
           Iphigenia at Aulis
         </motion.h2>
@@ -37,14 +37,14 @@ export default function TheSacrifice() {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.2 }}
           className="mx-auto h-[1px] w-32 bg-gradient-to-r from-transparent via-blood to-transparent mb-10"
         />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, delay: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
           className="space-y-6 text-parchment/60 text-xl leading-relaxed"
         >
           <p>
@@ -60,19 +60,19 @@ export default function TheSacrifice() {
         <motion.blockquote
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.2, delay: 1.5 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
           className="mt-14 text-blood/60 font-body text-2xl italic leading-relaxed"
         >
           &ldquo;The winds blew again. But something in him never
           returned.&rdquo;
         </motion.blockquote>
 
-        <ReadMoreLink href="/the-sacrifice" delay={1.8} variant="blood" />
+        <ReadMoreLink href="/the-sacrifice" delay={0.35} variant="blood" />
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 0.1 } : {}}
-          transition={{ duration: 2, delay: 2 }}
+          transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.4 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-blood/20 pointer-events-none"
         />
       </div>

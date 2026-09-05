@@ -3,6 +3,7 @@ import Image from "next/image";
 import BackToScroll from "@/components/BackToScroll";
 import ReadingProgress from "@/components/ReadingProgress";
 import ScrollReveal from "@/components/ScrollReveal";
+import ChapterEntrance from "@/components/ChapterEntrance";
 import ChapterNav from "@/components/ChapterNav";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TheFallPage() {
   return (
-    <article className="min-h-screen bg-obsidian">
+    <ChapterEntrance><article className="min-h-screen bg-obsidian">
       <ReadingProgress />
       <BackToScroll />
 
@@ -31,7 +32,7 @@ export default function TheFallPage() {
           <p className="font-serif text-xs tracking-[0.5em] uppercase text-gold/70 mb-3">
             The Fall
           </p>
-          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-marble/90 tracking-wide">
+          <h1 className="font-serif text-fluid-chapter text-marble/90 tracking-wide">
             The Homecoming
           </h1>
         </div>
@@ -162,6 +163,6 @@ export default function TheFallPage() {
       </div>
 
       <ChapterNav current="/the-fall" />
-    </article>
+    </article></ChapterEntrance>
   );
 }

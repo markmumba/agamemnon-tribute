@@ -44,7 +44,7 @@ export default function TheSiege() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
           className="font-serif text-xs tracking-[0.5em] uppercase text-gold/60 mb-4"
         >
           The Siege
@@ -53,8 +53,8 @@ export default function TheSiege() {
         <motion.h2
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.9, delay: 0.4 }}
-          className="font-serif text-5xl sm:text-6xl lg:text-7xl text-marble tracking-wide mb-16"
+          transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.15 }}
+          className="font-serif text-fluid-section text-marble tracking-wide mb-16"
         >
           Ten Years at Troy
         </motion.h2>
@@ -63,7 +63,7 @@ export default function TheSiege() {
           <motion.div
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
-            transition={{ duration: 1.5, delay: 0.6 }}
+            transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.2 }}
             className="absolute left-0 sm:left-8 top-0 h-full w-[1px] bg-gradient-to-b from-gold/50 via-gold/20 to-transparent origin-top"
           />
 
@@ -72,7 +72,7 @@ export default function TheSiege() {
               key={event.year}
               initial={{ opacity: 0, x: 40 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.8 + i * 0.25 }}
+              transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.2 + i * 0.05 }}
               className="relative pl-12 sm:pl-20 pb-14 last:pb-0"
             >
               <div className="absolute left-0 sm:left-8 top-1 w-2 h-2 -translate-x-[3.5px] rounded-full bg-gold/70" />
@@ -89,7 +89,7 @@ export default function TheSiege() {
           ))}
         </div>
 
-        <ReadMoreLink href="/the-siege" delay={1.8} />
+        <ReadMoreLink href="/the-siege" delay={0.35} />
       </div>
     </section>
   );

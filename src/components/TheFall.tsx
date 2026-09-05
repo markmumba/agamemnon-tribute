@@ -32,7 +32,7 @@ export default function TheFall() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
               className="font-serif text-xs tracking-[0.5em] uppercase text-gold mb-4"
             >
               The Fall
@@ -41,8 +41,8 @@ export default function TheFall() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.9, delay: 0.4 }}
-              className="font-serif text-4xl sm:text-5xl text-marble/90 tracking-wide mb-8"
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+              className="font-serif text-fluid-section text-marble/90 tracking-wide mb-8"
             >
               The Homecoming
             </motion.h2>
@@ -50,7 +50,7 @@ export default function TheFall() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
               className="space-y-5 text-parchment/80 text-xl leading-relaxed"
             >
               <p>
@@ -63,13 +63,13 @@ export default function TheFall() {
               </p>
             </motion.div>
 
-            <ReadMoreLink href="/the-fall" delay={1.2} />
+            <ReadMoreLink href="/the-fall" delay={0.3} />
           </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.2, delay: 1 }}
+            transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.25 }}
             className="flex flex-col items-center text-center"
           >
             <div className="w-48 h-48 rounded-full border border-gold/30 flex items-center justify-center mb-8 bg-obsidian/40 backdrop-blur-sm">
@@ -81,7 +81,7 @@ export default function TheFall() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
               className="text-marble/80 font-body text-xl italic leading-relaxed max-w-sm bg-obsidian/50 backdrop-blur-sm p-4"
             >
               &ldquo;Murdered not by an enemy on the battlefield, but by his own

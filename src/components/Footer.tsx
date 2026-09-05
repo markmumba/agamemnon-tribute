@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="relative z-10 bg-obsidian border-t border-gold/10">
       <div className="max-w-5xl mx-auto px-8 sm:px-16 py-16">
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
+        <nav aria-label="Chapter navigation" className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
           {chapters.map((ch) => (
             <Link
               key={ch.slug}

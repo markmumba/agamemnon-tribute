@@ -10,22 +10,22 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main>
-      <div className="sticky top-0 z-[1]">
+      <div className="lg:sticky top-0 z-[1]">
         <HeroSection />
       </div>
-      <div className="sticky top-0 z-[2] stack-shadow">
+      <div className="lg:sticky top-0 z-[2] stack-shadow">
         <TheMan />
       </div>
-      <div className="sticky top-0 z-[3] stack-shadow">
+      <div className="lg:sticky top-0 z-[3] stack-shadow">
         <TheWar />
       </div>
-      <div className="sticky top-0 z-[4] stack-shadow">
+      <div className="lg:sticky top-0 z-[4] stack-shadow">
         <TheSacrifice />
       </div>
-      <div className="sticky top-0 z-[5] stack-shadow">
+      <div className="lg:sticky top-0 z-[5] stack-shadow">
         <TheSiege />
       </div>
-      <div className="sticky top-0 z-[6] stack-shadow">
+      <div className="lg:sticky top-0 z-[6] stack-shadow">
         <TheFall />
       </div>
       <div className="relative z-[7] stack-shadow">

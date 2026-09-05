@@ -3,6 +3,7 @@ import Image from "next/image";
 import BackToScroll from "@/components/BackToScroll";
 import ReadingProgress from "@/components/ReadingProgress";
 import ScrollReveal from "@/components/ScrollReveal";
+import ChapterEntrance from "@/components/ChapterEntrance";
 import ChapterNav from "@/components/ChapterNav";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ const kings = [
 
 export default function TheWarPage() {
   return (
-    <article className="min-h-screen bg-obsidian">
+    <ChapterEntrance><article className="min-h-screen bg-obsidian">
       <ReadingProgress />
       <BackToScroll />
 
@@ -40,7 +41,7 @@ export default function TheWarPage() {
           <p className="font-serif text-xs tracking-[0.5em] uppercase text-gold/60 mb-3">
             The War
           </p>
-          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-marble tracking-wide">
+          <h1 className="font-serif text-fluid-chapter text-marble tracking-wide">
             A Thousand Ships
           </h1>
         </div>
@@ -135,6 +136,6 @@ export default function TheWarPage() {
       </div>
 
       <ChapterNav current="/the-war" />
-    </article>
+    </article></ChapterEntrance>
   );
 }
