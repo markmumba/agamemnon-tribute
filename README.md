@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agamemnon — King of Mycenae
+
+A cinematic tribute website to Agamemnon, the legendary High King of Mycenae and Commander of the Achaean forces at Troy. Inspired by the 2025 film *The Odyssey*.
+
+## Overview
+
+An immersive, scroll-driven storytelling experience that chronicles Agamemnon's life through six chapters:
+
+- **The Man** — His cursed bloodline and rise to power
+- **The War** — The oath that launched a thousand ships
+- **The Sacrifice** — Iphigenia at Aulis
+- **The Siege** — Ten years of war at Troy
+- **The Fall** — Murder at the hands of Clytemnestra
+- **The Legacy** — Three thousand years of memory
+
+Each chapter features a cinematic homepage section with parallax stacking, leading to a dedicated detail page with deeper narrative content.
+
+## Features
+
+- Parallax scroll stacking with sticky sections
+- Video backgrounds from the film
+- Scroll-triggered reveal animations
+- Reading progress indicator on detail pages
+- Chapter-to-chapter navigation
+- Film grain texture overlay for ancient aesthetic
+- Fully static — no API, no database
+
+## Tech Stack
+
+- **Next.js 16** (App Router, static export)
+- **Tailwind CSS v4** (CSS-only theme config)
+- **Framer Motion** (scroll animations, viewport detection)
+- **TypeScript**
+
+## Color Palette
+
+| Name | Hex | Usage |
+|------|-----|-------|
+| Obsidian | `#0a0a0a` | Background |
+| Marble | `#f5f0e8` | Primary text |
+| Gold | `#c9a84c` | Accents, headings |
+| Blood | `#c41e1e` | Sacrifice section |
+| Parchment | `#d4c5a0` | Body text |
+
+## Typography
+
+- **Cinzel** — Serif headings (roman inscription feel)
+- **Cormorant Garamond** — Body text (elegant, readable)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All 11 routes are statically generated.
