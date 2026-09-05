@@ -5,18 +5,19 @@ import Image from "next/image";
 import { useRef } from "react";
 import ReadMoreLink from "./ReadMoreLink";
 
+const roles = ["King", "Father", "Conqueror", "Mortal"];
+
 export default function TheLegacy() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-obsidian">
-      {/* Split background — full cover */}
       <div className="absolute inset-0 grid lg:grid-cols-2">
         <div className="relative film-grain">
           <Image
             src="/agamemnon-armor.jpg"
-            alt="Corinthian helmet — relic of an age"
+            alt="Corinthian helmet"
             fill
             unoptimized
             className="object-cover object-center"
@@ -35,10 +36,8 @@ export default function TheLegacy() {
         </div>
       </div>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-obsidian/80" />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 sm:px-16 py-24 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -83,14 +82,13 @@ export default function TheLegacy() {
 
         <ReadMoreLink href="/the-legacy" delay={1.5} />
 
-        {/* Themes */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 1.8 }}
           className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8"
         >
-          {["King", "Father", "Conqueror", "Mortal"].map((role, i) => (
+          {roles.map((role, i) => (
             <motion.div
               key={role}
               initial={{ opacity: 0, y: 20 }}
@@ -104,19 +102,6 @@ export default function TheLegacy() {
               </span>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Footer attribution */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 2.5 }}
-          className="mt-24 pt-8 border-t border-gold/10"
-        >
-          <p className="font-serif text-[10px] tracking-[0.5em] uppercase text-parchment/50">
-            A tribute to the King of Kings — from Homer&apos;s Iliad to
-            eternity
-          </p>
         </motion.div>
       </div>
     </section>

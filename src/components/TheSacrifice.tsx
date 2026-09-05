@@ -13,10 +13,8 @@ export default function TheSacrifice() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center bg-obsidian overflow-hidden"
     >
-      {/* Blood-red ambient glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,0,0,0.15)_0%,_transparent_70%)]" />
 
-      {/* Content — centered, text-heavy, dark mood */}
       <div className="relative z-10 max-w-3xl px-8 sm:px-16 py-24 text-center">
         <motion.p
           initial={{ opacity: 0 }}
@@ -71,7 +69,6 @@ export default function TheSacrifice() {
 
         <ReadMoreLink href="/the-sacrifice" delay={1.8} variant="blood" />
 
-        {/* Subtle decorative elements */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 0.1 } : {}}

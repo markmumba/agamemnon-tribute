@@ -4,6 +4,12 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ReadMoreLink from "./ReadMoreLink";
 
+const stats = [
+  { number: "1,186", label: "Ships Assembled" },
+  { number: "100,000+", label: "Warriors" },
+  { number: "29", label: "Kings United" },
+];
+
 export default function TheWar() {
   const ref = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -15,7 +21,6 @@ export default function TheWar() {
 
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-obsidian">
-      {/* Full-bleed video background — ships at sea */}
       <video
         ref={videoRef}
         autoPlay
@@ -29,7 +34,6 @@ export default function TheWar() {
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-obsidian/30" />
 
-      {/* Content at bottom */}
       <div className="relative z-10 flex flex-col justify-end h-full min-h-screen px-8 sm:px-16 lg:px-24 pb-24 pt-48">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -62,18 +66,13 @@ export default function TheWar() {
           </p>
         </motion.div>
 
-        {/* Ship count stats */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-12 flex gap-12 sm:gap-20"
         >
-          {[
-            { number: "1,186", label: "Ships Assembled" },
-            { number: "100,000+", label: "Warriors" },
-            { number: "29", label: "Kings United" },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label}>
               <p className="font-serif text-3xl sm:text-4xl text-gold tracking-wider">
                 {stat.number}

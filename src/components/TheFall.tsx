@@ -14,7 +14,6 @@ export default function TheFall() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center bg-obsidian overflow-hidden"
     >
-      {/* Background image */}
       <div className="absolute inset-0 film-grain">
         <Image
           src="/homecoming.png"
@@ -30,7 +29,6 @@ export default function TheFall() {
 
       <div className="relative z-10 max-w-4xl px-8 sm:px-16 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — the story */}
           <div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -69,7 +67,6 @@ export default function TheFall() {
             <ReadMoreLink href="/the-fall" delay={1.2} />
           </div>
 
-          {/* Right — dramatic reveal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}

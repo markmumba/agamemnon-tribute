@@ -5,6 +5,7 @@ import TheSacrifice from "@/components/TheSacrifice";
 import TheSiege from "@/components/TheSiege";
 import TheFall from "@/components/TheFall";
 import TheLegacy from "@/components/TheLegacy";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -29,6 +30,9 @@ export default function Home() {
       </div>
       <div className="relative z-[7] stack-shadow">
         <TheLegacy />
+      </div>
+      <div className="relative z-[8]">
+        <Footer />
       </div>
     </main>
   );

@@ -15,7 +15,6 @@ export default function TheMan() {
       id="the-man"
       className="relative min-h-screen flex items-center overflow-hidden bg-obsidian"
     >
-      {/* Full-bleed background — high-res image */}
       <div className="absolute inset-0 film-grain">
         <Image
           src="/atreus-king.png"
@@ -29,7 +28,6 @@ export default function TheMan() {
       <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/80 to-transparent" />
       <div className="absolute inset-0 w-1/2 bg-obsidian/60" />
 
-      {/* Text side */}
       <div className="relative z-10 w-full lg:w-1/2 px-8 sm:px-16 lg:px-24 py-24">
         <motion.div
           initial={{ scaleX: 0 }}

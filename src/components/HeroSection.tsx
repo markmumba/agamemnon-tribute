@@ -7,13 +7,11 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Ensure video plays on mount
     videoRef.current?.play().catch(() => {});
   }, []);
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-obsidian">
-      {/* Background Video */}
       <video
         ref={videoRef}
         autoPlay
@@ -26,12 +24,9 @@ export default function HeroSection() {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay with gradient */}
       <div className="hero-overlay absolute inset-0 z-10" />
 
-      {/* Content */}
       <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
-        {/* Greek decorative line */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -39,7 +34,6 @@ export default function HeroSection() {
           className="mb-8 h-[2px] w-48 bg-gradient-to-r from-transparent via-gold to-transparent"
         />
 
-        {/* Subtitle - slides in from left */}
         <motion.p
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -49,7 +43,6 @@ export default function HeroSection() {
           High King of Mycenae
         </motion.p>
 
-        {/* Main title - slides in from right */}
         <motion.h1
           initial={{ x: 80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -59,7 +52,6 @@ export default function HeroSection() {
           AGAMEMNON
         </motion.h1>
 
-        {/* Tagline - slides up */}
         <motion.p
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -71,7 +63,6 @@ export default function HeroSection() {
           His glory echoes through the ages.
         </motion.p>
 
-        {/* Greek decorative line bottom */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -79,7 +70,6 @@ export default function HeroSection() {
           className="mt-8 h-[2px] w-48 bg-gradient-to-r from-transparent via-gold to-transparent"
         />
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -96,7 +86,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

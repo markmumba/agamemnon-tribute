@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   title: "Agamemnon — King of Mycenae",
   description:
     "A tribute to Agamemnon, High King of Mycenae, Commander of the Achaean forces at Troy.",
+  openGraph: {
+    title: "Agamemnon — King of Mycenae",
+    description:
+      "A cinematic tribute to the most powerful king of ancient Greece.",
+    images: ["/atreus-king.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agamemnon — King of Mycenae",
+    images: ["/atreus-king.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

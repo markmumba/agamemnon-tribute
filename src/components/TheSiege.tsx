@@ -5,31 +5,30 @@ import Image from "next/image";
 import { useRef } from "react";
 import ReadMoreLink from "./ReadMoreLink";
 
+const events = [
+  {
+    year: "Year 1",
+    title: "Landing at Troy",
+    text: "The Achaeans storm the beaches. Protesilaus falls first — as the prophecy foretold.",
+  },
+  {
+    year: "Year 9",
+    title: "The Wrath of Achilles",
+    text: "Agamemnon seizes Briseis. Achilles withdraws from battle. The Greeks begin to falter.",
+  },
+  {
+    year: "Year 10",
+    title: "The Fall of Troy",
+    text: "Odysseus devises the wooden horse. Troy opens its gates. The city burns.",
+  },
+];
+
 export default function TheSiege() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const events = [
-    {
-      year: "Year 1",
-      title: "Landing at Troy",
-      text: "The Achaeans storm the beaches. Protesilaus falls first — as the prophecy foretold.",
-    },
-    {
-      year: "Year 9",
-      title: "The Wrath of Achilles",
-      text: "Agamemnon seizes Briseis. Achilles withdraws from battle. The Greeks begin to falter.",
-    },
-    {
-      year: "Year 10",
-      title: "The Fall of Troy",
-      text: "Odysseus devises the wooden horse. Troy opens its gates. The city burns.",
-    },
-  ];
-
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-obsidian">
-      {/* Full-bleed background — high-res image */}
       <div className="absolute inset-0 film-grain">
         <Image
           src="/troy-siege.png"
@@ -61,7 +60,6 @@ export default function TheSiege() {
           Ten Years at Troy
         </motion.h2>
 
-        {/* Timeline */}
         <div className="relative max-w-4xl">
           <motion.div
             initial={{ scaleY: 0 }}

@@ -6,7 +6,7 @@
   --color-gold: #c9a84c;
   --color-gold-dark: #8b6914;
   --color-bronze: #cd7f32;
-  --color-blood: #8b0000;
+  --color-blood: #c41e1e;
   --color-parchment: #d4c5a0;
   --color-ivory: #fffff0;
   --font-serif: var(--font-cinzel);
@@ -25,7 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Greek key border pattern */
 .greek-border {
   border-image: repeating-linear-gradient(
     90deg,
@@ -40,7 +39,6 @@ body {
   border-style: solid;
 }
 
-/* Shimmer on gold text */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -62,12 +60,10 @@ body {
   animation: shimmer 4s linear infinite;
 }
 
-/* Parallax stacking shadow — cast onto section being covered */
 .stack-shadow {
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.8);
 }
 
-/* Film grain overlay — masks low-res artifacts, adds ancient texture */
 .film-grain::after {
   content: "";
   position: absolute;
@@ -81,7 +77,6 @@ body {
   mix-blend-mode: overlay;
 }
 
-/* Video overlay gradient */
 .hero-overlay {
   background: linear-gradient(
     to bottom,
