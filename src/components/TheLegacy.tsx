@@ -19,7 +19,6 @@ export default function TheLegacy() {
             src="/agamemnon-armor.jpg"
             alt="Corinthian helmet"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="50vw"
           />
@@ -29,7 +28,6 @@ export default function TheLegacy() {
             src="/agamemnon-legacy.webp"
             alt="Agamemnon among his fleet"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="50vw"
           />

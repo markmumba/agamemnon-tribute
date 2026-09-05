@@ -37,10 +37,9 @@ export default function TheLegacyPage() {
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 film-grain">
           <Image
-            src="/legacy-hero.png"
+            src="/legacy-hero.webp"
             alt="The legacy of Agamemnon"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="100vw"
             priority
@@ -118,7 +117,6 @@ export default function TheLegacyPage() {
                 alt="Corinthian helmet artifact"
                 width={794}
                 height={781}
-                unoptimized
                 className="w-full max-w-md mx-auto"
               />
               <p className="text-center text-parchment/30 text-sm mt-4 font-serif tracking-wider">

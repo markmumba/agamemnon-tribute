@@ -30,7 +30,6 @@ export default function TheWarPage() {
             src="/agamemnon-war.jpg"
             alt="The Achaean army assembles"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="100vw"
             priority

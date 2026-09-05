@@ -46,10 +46,9 @@ export default function TheSiegePage() {
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 film-grain">
           <Image
-            src="/troy-siege.png"
+            src="/troy-siege.webp"
             alt="The siege of Troy"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="100vw"
             priority

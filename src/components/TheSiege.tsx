@@ -31,10 +31,9 @@ export default function TheSiege() {
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-obsidian">
       <div className="absolute inset-0 film-grain">
         <Image
-          src="/troy-siege.png"
+          src="/troy-siege.webp"
           alt="The siege of Troy"
           fill
-          unoptimized
           className="object-cover object-center"
           sizes="100vw"
         />

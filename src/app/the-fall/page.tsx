@@ -18,10 +18,9 @@ export default function TheFallPage() {
       <div className="relative h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 film-grain">
           <Image
-            src="/homecoming.png"
+            src="/homecoming.webp"
             alt="The road to Mycenae"
             fill
-            unoptimized
             className="object-cover object-center"
             sizes="100vw"
             priority

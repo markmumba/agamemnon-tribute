@@ -17,10 +17,9 @@ export default function TheMan() {
     >
       <div className="absolute inset-0 film-grain">
         <Image
-          src="/atreus-king.png"
+          src="/atreus-king.webp"
           alt="Agamemnon, Son of Atreus"
           fill
-          unoptimized
           className="object-cover object-center"
           sizes="100vw"
         />

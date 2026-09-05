@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: "Agamemnon — King of Mycenae",
     description:
       "A cinematic tribute to the most powerful king of ancient Greece.",
-    images: ["/atreus-king.png"],
+    images: ["/atreus-king.webp"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Agamemnon — King of Mycenae",
-    images: ["/atreus-king.png"],
+    images: ["/atreus-king.webp"],
   },
 };
 
