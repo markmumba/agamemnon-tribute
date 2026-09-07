@@ -19,9 +19,11 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-obsidian">
       {!videoLoaded && (
-        <div className="absolute inset-0 z-[5] flex items-center justify-center">
-          <div className="h-8 w-8 rounded-full border-2 border-gold/30 border-t-gold animate-spin" />
-        </div>
+        <img
+          src="/hero-poster.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover scale-[1.35] z-[5]"
+        />
       )}
 
       <video
@@ -30,6 +32,8 @@ export default function HeroSection() {
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/hero-poster.jpg"
         suppressHydrationWarning
         onCanPlay={() => setVideoLoaded(true)}
         className="absolute inset-0 h-full w-full object-cover scale-[1.35] transition-opacity duration-700"
